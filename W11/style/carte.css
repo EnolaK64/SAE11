@@ -1,0 +1,18 @@
+body {
+  font-size: 15px;
+}
+.carte {
+  border: 1px black solid;
+  display: flex;
+}
+
+.bateau {
+  border: 1px black solid;
+  width: 50%;
+  height: 100%;
+}
+
+#logo {
+  width: 20rem;
+  height: auto;
+}

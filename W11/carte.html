@@ -1,27 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/carte.css" />
     <title>Carte d'embarquement</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <nav><ul>
-            <li>
-                <a href="./acceuil">Accueil</a>
-            </li>
-            <li>
-                <a href="./dashboard.html">Tableau de bord</a>
-            </li>
-            <li>
-                <a href="#">Cartes D'embarquement</a>
-            </li>
-            <li>
-                <a href="./facture.html">Facture</a>
-            </li>
-        </ul></nav>
+      <nav>
+        <ul>
+          <li>
+            <a href="./acceuil">Accueil</a>
+          </li>
+          <li>
+            <a href="./dashboard.html">Tableau de bord</a>
+          </li>
+          <li>
+            <a href="#">Cartes D'embarquement</a>
+          </li>
+          <li>
+            <a href="./facture.html">Facture</a>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <main></main>
-</body>
+    <main>
+      <div class="carte">
+        <img src="assets/CAN.png" alt="Logo CAN" id="logo" />
+        <h1>Carte d'embarquement</h1>
+        <div class="personne">
+          <p>Réservation <span class="reservation"></span></p>
+          <p>Réservation <span class="nom"></span></p>
+          <p>Réservation <span class="passager"></span></p>
+        </div>
+        <div class="bateau">
+          <p>Gare de départ <span class="depart"></span></p>
+          <p>Gare d'arrivée <span class="arrivee"></span></p>
+          <p>Date <span class="date"></span></p>
+          <p>Heure départ <span class="heureDepart"></span></p>
+          <p>Bateau <span class="nomBateau"></span></p>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
