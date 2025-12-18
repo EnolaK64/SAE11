@@ -1,10 +1,12 @@
 using System;
 using System.Text;
 using System.IO;
-using SYstem.Collections.Generic;
+using System.Collections.Generic;
 
-class SAÉ_11{
-    static void Main(){
-        
+class SAE_11
+{
+    static void Main()
+    {
+
     }
 }
