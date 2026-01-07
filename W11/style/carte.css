@@ -2,38 +2,64 @@ body {
   font-size: 15px;
 }
 .carte {
-  border: 1px black solid;
+  border: 5px black solid;
   display: flex;
-  justify-content: end;
-  align-items: center;
-  /* flex-direction: column; */
-  border-radius: 10px;
+  justify-content: space-between;
+  border-radius: 20px;
   background-color: #0b638b;
+  height: 31rem;
+  width: 90%;
 }
 
+.gauche span {
+  background-color: #fff;
+  width: 10rem;
+  height: 20rem;
+}
 
-.bateau {
-  border: 1px black solid;
+.gauche {
+  /* border: 1px black solid; */
   width: 50%;
   height: 100%;
-  justify-self: start;
+  color: #fff;
+  font-size: x-large;
+}
+
+.bateau{
+  padding-left: 20px;
+}
+
+.droite{
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
 }
 
 .personne{
-  width: 45%;
-  display: flex;
-  flex-direction: column;
-justify-self: end;
   background-color: #fff;
+  border-radius: 15px;
+  margin: 10px;
+  height: 90%;
+}
+
+.personne header{
+  border-bottom: 1px solid black;
+  font-size: x-large;
 }
 
 #logo {
   width: 45%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 15px;
   border: 2px solid black;
 }
 
 h1{
-  /* position: relative; */
+  color: #fff;
+}
+
+.droite .gauche{
+  color: #000;
+  padding: 0 0 0 10px;
 }

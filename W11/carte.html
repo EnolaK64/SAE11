@@ -26,22 +26,36 @@
       </nav>
     </header>
     <main>
-      <div class="carte">
-        <div class="bateau">
-          <img src="assets/CAN.png" alt="Logo CAN" id="logo" />
-          <p>Gare de départ <span class="depart"></span></p>
-          <p>Gare d'arrivée <span class="arrivee"></span></p>
-          <p>Date <span class="date"></span></p>
-          <p>Heure départ <span class="heureDepart"></span></p>
-          <p>Bateau <span class="nomBateau"></span></p>
-        </div>
-        <div class="personne">
+      <section class="carte">
+        <section class="gauche">
+          <header>
+            <img src="assets/CAN.png" alt="Logo CAN" id="logo" />
+          </header>
+          <section class="bateau">
+            <p>Gare de départ <span class="depart"></span></p>
+            <p>Gare d'arrivée <span class="arrivee"></span></p>
+            <p>Date <span class="date"></span></p>
+            <p>Heure départ <span class="heureDepart"></span></p>
+            <p>Bateau <span class="nomBateau"></span></p>
+          </section>
+        </section>
+        <section class="droite">
           <h1>Carte d'embarquement</h1>
-          <p>Réservation <span class="reservation"></span></p>
-          <p>Nom <span class="nom"></span></p>
-          <p>Passager <span class="passager"></span></p>
-        </div>
-      </div>
+          <section class="personne">
+            <header>
+              <div class="gauche">
+                <p>Réservation</p>
+                <p>Nom</p>
+              </div>
+              <div class="droite">
+                <span class="reservation"></span>
+                <span class="nom"></span>
+              </div>
+            </header>
+            <p>Passager <span class="passager"></span></p>
+          </section>
+        </section>
+      </section>
     </main>
   </body>
 </html>
