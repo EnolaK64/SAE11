@@ -26,8 +26,8 @@
 			</nav>
 		</header>
 		<main>
-			<section class="carte">
-				<div id="gauche">
+			<div class="carte">
+				<div class="gauche">
 					<header>
 						<img src="assets/CAN.png" alt="Logo CAN" id="logo" />
 					</header>
@@ -48,43 +48,45 @@
 						</div>
 					</section>
 				</div>
-				<section class="droite">
+				<div class="droite">
 					<h1>Carte d'embarquement</h1>
 					<section class="personne">
 						<header>
-							<div class="gauche">
+							<div class="libelle">
 								<p>Réservation</p>
 								<p>Nom</p>
 							</div>
-							<div class="droite">
-								<span class="reservation">123456</span>
-								<span class="nom">lorem</span>
+							<div class="valeur">
+								<p class="reservation">123456</p>
+								<p class="nom">lorem</p>
 							</div>
 						</header>
-						<article class="passagerInfo">
-							<section class="libelle">
-								<p class="passager">Passager</p>
+						<div class="qrcode">
+							<p class="passager">Passager</p>
+							<img
+								src="./assets/qrcodePlaceHolder.png"
+								alt="qrcode"
+								id="qrcodeImg"
+								class="passager"
+							/>
+						</div>
+						<div class="passagerInfo">
+							<div class="libelle">
 								<p class="nom">Nom</p>
 								<p class="prenom">Prénom</p>
 								<p class="categorie">Catégorie</p>
 								<p class="prix">Prix</p>
-							</section>
-							<section class="valeur">
-								<img
-									src="./assets/qrcodePlaceHolder.png"
-									alt="qrcode"
-									id="qrcode"
-									class="passager"
-								/>
+							</div>
+							<div class="valeur">
 								<p class="nom">lorem</p>
 								<p class="prenom">lorem</p>
 								<p class="categorie">lorem</p>
 								<p class="prix">10€</p>
-							</section>
-						</article>
+							</div>
+						</div>
 					</section>
-				</section>
-			</section>
+				</div>
+			</div>
 		</main>
 	</body>
 </html>
