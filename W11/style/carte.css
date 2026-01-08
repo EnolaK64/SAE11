@@ -1,22 +1,22 @@
 body {
 	font-size: 15px;
 }
+main {
+	display: flex;
+	justify-content: center;
+}
+
 .carte {
-	border: 5px black solid;
+	border: 4px black solid;
 	display: flex;
 	justify-content: space-between;
 	border-radius: 20px;
 	background-color: #0b638b;
 	height: 23rem;
-	width: 90%;
+	aspect-ratio: 2.11;
+	width: auto;
 	position: relative;
 	/* padding: 5px; */
-}
-
-.gauche span {
-	background-color: #fff;
-	width: 10rem;
-	height: 20rem;
 }
 
 div.gauche {
@@ -49,6 +49,7 @@ div.gauche {
 	height: 20px;
 	background-color: #fff;
 	color: black;
+	border-radius: 20%;
 }
 
 .bateau > div > p {
@@ -107,7 +108,7 @@ div.droite {
 	width: 100%;
 	margin: 0;
 	height: 100%;
-	border: 1px red solid;
+	border: 3px black solid;
 	display: flex;
 	flex-direction: column;
 }
