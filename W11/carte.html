@@ -26,12 +26,14 @@
 			</nav>
 		</header>
 		<main>
-			<div class="carte">
+			<div id="passagers"></div>
+			<div id="vehicules"></div>
+			<div class="cartePassager carte">
 				<div class="gauche">
 					<header>
 						<img src="assets/CAN.png" alt="Logo CAN" id="logo" />
 					</header>
-					<section class="bateau" id="infoBateau">
+					<section class="bateau infoBateau" class="infoBateau">
 						<div class="libelle">
 							<p>Gare de départ</p>
 							<p>Gare d'arrivée</p>
@@ -62,15 +64,14 @@
 							</div>
 						</header>
 						<div class="qrcode">
-							<p class="passager">Passager</p>
+							<p class="type">Passager</p>
 							<img
 								src="./assets/qrcodePlaceHolder.png"
 								alt="qrcode"
-								id="qrcodeImg"
-								class="passager"
+								class="passager qrcodeImg"
 							/>
 						</div>
-						<div class="passagerInfo">
+						<div class="passagerInfo info">
 							<div class="libelle">
 								<p class="nom">Nom</p>
 								<p class="prenom">Prénom</p>
@@ -81,6 +82,65 @@
 								<p class="nom">lorem</p>
 								<p class="prenom">lorem</p>
 								<p class="categorie">lorem</p>
+								<p class="prix">10€</p>
+							</div>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="carteVehicule carte">
+				<div class="gauche">
+					<header>
+						<img src="assets/CAN.png" alt="Logo CAN" id="logo" />
+					</header>
+					<section class="bateau infoBateau" class="infoBateau">
+						<div class="libelle">
+							<p>Gare de départ</p>
+							<p>Gare d'arrivée</p>
+							<p>Date</p>
+							<p>Heure départ</p>
+							<p>Bateau</p>
+						</div>
+						<div class="valeur">
+							<p class="depart">test</p>
+							<p class="arrivee"></p>
+							<p class="date">test</p>
+							<p class="heureDepart"></p>
+							<p class="nomBateau"></p>
+						</div>
+					</section>
+				</div>
+				<div class="droite">
+					<h1>Carte d'embarquement</h1>
+					<section class="personne">
+						<header>
+							<div class="libelle">
+								<p>Réservation</p>
+								<p>Nom</p>
+							</div>
+							<div class="valeur">
+								<p class="reservation">123456</p>
+								<p class="nom">lorem</p>
+							</div>
+						</header>
+						<div class="qrcode">
+							<p class="type">Véhicule</p>
+							<img
+								src="./assets/qrcodePlaceHolder.png"
+								alt="qrcode"
+								class="passager qrcodeImg"
+							/>
+						</div>
+						<div class="vehiculeInfo info">
+							<div class="libelle">
+								<p class="categorie">Catégorie</p>
+								<p class="nombre">Nombre</p>
+								<p class="prix">Prix</p>
+							</div>
+							<div class="valeur">
+								<p class="categorie">lorem</p>
+								<p class="nombre">lorem</p>
 								<p class="prix">10€</p>
 							</div>
 						</div>
