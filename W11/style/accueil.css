@@ -1,0 +1,23 @@
+main {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	padding: 10px;
+}
+
+img {
+	width: 50%;
+	height: auto;
+	min-width: 200px;
+	max-width: 500px;
+}
+
+@media screen and (max-width: 1100px) {
+	h1 {
+		font-size: larger;
+	}
+	h2 {
+		font-size: smaller;
+	}
+}
