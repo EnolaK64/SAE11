@@ -27,13 +27,13 @@ main > .carte {
 	justify-content: space-between;
 	border-radius: 20px;
 	background-color: #0b638b;
-	/* width: 650px; */
 	width: 45vw;
 	min-width: 670px;
 	height: auto;
 	aspect-ratio: 2.11;
 	position: relative;
 	margin: 10px;
+	box-sizing: border-box;
 }
 
 .carte > div {
@@ -131,6 +131,7 @@ h1 {
 	color: #fff;
 	font-size: x-large;
 	/* display: none; */
+	text-wrap: nowrap;
 }
 
 .info {
@@ -168,4 +169,36 @@ img.qrcodeImg {
 
 .personne > * {
 	/* display: none !important; */
+}
+
+@media screen and (max-width: 1100px) {
+	body {
+		min-width: 364px;
+		overflow: auto;
+	}
+	h1 {
+		font-size: small;
+	}
+	p {
+		font-size: x-small;
+	}
+	.affichage {
+		padding: 0px;
+		width: 100px;
+	}
+	.carte {
+		width: 100vw;
+		min-width: 400px;
+		max-width: 500px;
+	}
+
+	.bateau > div > p {
+		height: 15px;
+	}
+	#btnSelection {
+		width: 90%;
+	}
+	.qrcode {
+		width: 80%;
+	}
 }
