@@ -1,59 +1,94 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Titre de la page</title>
-</head>
-<body>
-
-    <!-- ================= HEADER ================= -->
-    <header>
-      <h1>Facutre</h1>
-    </header>
-
-    <!-- ================= NAVIGATION ================= -->
-    <nav>
-        <ul>
-            <li><a href="#">Lien 1</a></li>
-            <li><a href="#">Lien 2</a></li>
-            <li><a href="#">Lien 3</a></li>
-        </ul>
-    </nav>
-
-    <!-- ================= CONTENU PRINCIPAL ================= -->
-    <main>
-
-        <!-- ======== SECTION 1 ======== -->
-        <section>
-            <h2>Titre de section</h2>
-
-            <!-- Zone complémentaire (aside, citation, image, etc.) -->
-            <aside>
-                <!-- Contenu secondaire -->
-            </aside>
-
-            <!-- Article principal -->
-            <article>
-                <!-- Contenu principal de la section -->
-            </article>
-        </section>
-
-        <!-- ======== SECTION 2 ======== -->
-        <section>
-            <h2>Autre section</h2>
-            <article>
-                <!-- Autre contenu -->
-            </article>
-        </section>
-
-    </main>
-
-    <!-- ================= FOOTER ================= -->
-    <footer>
-        <!-- Pied de page -->
-    </footer>
-
-</body>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style/style.css" />
+		<link rel="stylesheet" href="style/facture.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="./index.html">Accueil</a>
+					</li>
+					<li>
+						<a href="./dashboard.html">Tableau de bord</a>
+					</li>
+					<li>
+						<a href="./selectionReserv.html">Cartes</a>
+					</li>
+					<li>
+						<a href="./selectionFacture.html">Facture</a>
+					</li>
+					<li>
+						<a href="./stats.html">Statistiques</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<div id="facture">
+				<img src="./assets/CAN.png" alt="logo de la CAN" />
+				<section>
+					<header>
+						<h1>Facture</h1>
+						<p>Illkirch le <span class="dateFacture"></span></p>
+					</header>
+					<article class="infoReservation">
+						<p>Réservation n°: <span class="numReserv"></span></p>
+						<p>
+							Nom de réservation: <span class="nomReserv"></span>
+						</p>
+					</article>
+					<article class="infoVoyage">
+						<p>Traversée : <span class="traverse"></span></p>
+						<p>Date : <span class="dateTraverse"></span></p>
+						<p>Départ : <span class="depart"></span></p>
+						<p>Bateau : <span class="nomBateau"></span></p>
+					</article>
+					<article class="personnes">
+						<table>
+							<thead>
+								<tr>
+									<th>Catégorie</th>
+									<th>Nombre</th>
+									<th>Prix unitaire</th>
+									<th>Prix ligne</th>
+								</tr>
+							</thead>
+							<tbody id="personne"></tbody>
+						</table>
+						<p>
+							Sous-total personnes :
+							<span id="prixPersonnes"></span>
+						</p>
+					</article>
+					<article class="vehicule">
+						<table>
+							<thead>
+								<tr>
+									<th>Catégorie</th>
+									<th>Quantité</th>
+									<th>Prix unitraire</th>
+									<th>Prix ligne</th>
+								</tr>
+							</thead>
+							<tbody id="vehicule"></tbody>
+						</table>
+						<p>
+							Sous-total véhicules :
+							<span id="prixVehicules"></span>
+						</p>
+					</article>
+					<p class="total">
+						Total <span class="totalFacture"></span>
+					</p>
+				</section>
+			</div>
+		</main>
+		<script src="./js/facture.js"></script>
+	</body>
 </html>
- 

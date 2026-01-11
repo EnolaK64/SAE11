@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style/style.css" />
+		<link rel="stylesheet" href="style/selection.css" />
+
+		<title>Facture</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<ul>
+					<li>
+						<a href="./index.html">Accueil</a>
+					</li>
+					<li>
+						<a href="./dashboard.html">Tableau de bord</a>
+					</li>
+					<li>
+						<a href="./selectionReserv.html">Cartes</a>
+					</li>
+					<li>
+						<a href="#">Facture</a>
+					</li>
+					<li>
+						<a href="./stats.html">Statistiques</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<form action="facture.html">
+				<label for="reservation"
+					>Veuillez saisir votre numéro de réservation</label
+				>
+				<input
+					type="number"
+					id="reservation"
+					name="reservation"
+					placeholder="Numéro de réservation"
+				/>
+				<input type="submit" value="Envoyer" id="btnEnvoi" />
+			</form>
+		</main>
+	</body>
+</html>

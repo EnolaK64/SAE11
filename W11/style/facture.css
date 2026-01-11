@@ -1,0 +1,60 @@
+body {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+body > header {
+	width: 100%;
+}
+main {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 90%;
+}
+
+#facture {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	border: 4px solid #0b638b;
+	aspect-ratio: 1.1414;
+	width: 80%;
+	height: auto;
+	padding: 30px;
+}
+
+table {
+	border-collapse: collapse;
+	display: inline-table;
+	border: 2px solid black;
+}
+
+th,
+td {
+	padding: 5px;
+	border: 1px black solid;
+}
+article {
+	margin: 30px;
+}
+
+article > p {
+	margin: 5px;
+}
+
+h1 {
+	text-align: center;
+	font-size: x-large;
+}
+
+p {
+	font-weight: bold;
+}
+span {
+	font-weight: initial;
+}
+
+.total {
+	text-align: right;
+}
