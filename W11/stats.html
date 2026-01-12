@@ -21,7 +21,7 @@
 						<a href="./selectionReserv.html">Cartes</a>
 					</li>
 					<li>
-						<a href="./facture.html">Facture</a>
+						<a href="./selectionFacture.html">Facture</a>
 					</li>
 					<li>
 						<a href="#">Statistiques</a>
@@ -29,5 +29,27 @@
 				</ul>
 			</nav>
 		</header>
+		<main>
+			<table id="tableStats">
+				<thead>
+					<tr>
+						<th colspan="1"></th>
+						<th colspan="2">Passager</th>
+						<th colspan="2">Véhicule</th>
+					</tr>
+					<tr>
+						<th>Liaison</th>
+						<th>Nombre</th>
+						<th>Chiffre d'Affaire</th>
+						<th>Nombre</th>
+						<th>Chiffre d'Affaire</th>
+					</tr>
+				</thead>
+				<tbody id="tableBody"></tbody>
+			</table>
+			<p id="affichageSomme"></p>
+			<p id="affichageErreur"></p>
+			<script src="./js/stats.js"></script>
+		</main>
 	</body>
 </html>
