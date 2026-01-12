@@ -1,0 +1,44 @@
+main {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+}
+
+table {
+	display: none;
+	border: 1px solid black;
+	border-collapse: collapse;
+	margin: 10px;
+}
+
+th,
+td {
+	border: 1px solid black;
+	padding: 5px;
+}
+.afficherTable {
+	display: table;
+}
+
+.vert {
+	background-color: #0f0;
+}
+
+.orange {
+	background-color: #f90;
+}
+
+.rouge {
+	background-color: #f11;
+}
+
+.fluo {
+	background-color: #fff300;
+}

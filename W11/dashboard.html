@@ -21,7 +21,7 @@
 						<a href="./selectionReserv.html">Cartes</a>
 					</li>
 					<li>
-						<a href="./facture.html">Facture</a>
+						<a href="./selectionFacture.html">Facture</a>
 					</li>
 					<li>
 						<a href="./stats.html">Statistiques</a>
@@ -29,5 +29,38 @@
 				</ul>
 			</nav>
 		</header>
+		<main>
+			<form action="">
+				<fieldset>
+					<legend>Choisissez une liaison</legend>
+					<label for="liaison">Les liaisons</label>
+					<select name="liaision" id="liaison">
+						<option value="">Veuillez choisir une liaison</option>
+					</select>
+				</fieldset>
+				<fieldset name="e">
+					<legend>Choisissez une date</legend>
+					<label for="date">La date</label>
+					<input type="date" id="date" name="date" />
+				</fieldset>
+			</form>
+			<table id="tableauLiaison">
+				<thead>
+					<tr>
+						<th colspan="1"></th>
+						<th colspan="2">Taux de remplissage</th>
+					</tr>
+
+					<tr>
+						<th>Heures</th>
+						<th>Passagers</th>
+						<th>Vehicules</th>
+					</tr>
+				</thead>
+				<tbody id="tableauLiaisonBody"></tbody>
+			</table>
+			<p id="erreur"></p>
+		</main>
+		<script src="./js/dashboard.js" type="module"></script>
 	</body>
 </html>
