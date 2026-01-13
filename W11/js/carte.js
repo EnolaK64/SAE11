@@ -24,7 +24,7 @@ fetch(`https://can.iutrs.unistra.fr/api/reservation/${reservation}`).then(
 function creerCartes(nbPassagers, nbVehicule, data) {
 	// la fonction creerCartes est déclaré
 	const cartePassager = document.querySelector(".carte"); // elle récupére dans le DOM l'element de class carte et le stocke dans la variable cartePassager
-	for (let i = 1; i < nbPassagers; i++) {
+	for (let i = 1; i < nbPassagers + 1; i++) {
 		// pour chaque passagers...
 		const cloneCarte = cartePassager.cloneNode(true); // on crée une copie de l'element .carte
 		chercherPassagers(i, cloneCarte); //on appele la fonction chercherPasasgers on fournis l'element cloneCarte pour qu'il puisse etre modifé par la fonction
@@ -34,7 +34,7 @@ function creerCartes(nbPassagers, nbVehicule, data) {
 
 	//on refait la même chose mais pour les vehicules et on clone la carte des vehicules
 	const carteVehicule = document.querySelector(".carteVehicule");
-	for (let i = 1; i < nbVehicule; i++) {
+	for (let i = 1; i < nbVehicule + 1; i++) {
 		const cloneCarte = carteVehicule.cloneNode(true);
 		chercherVehicules(i, cloneCarte);
 		traiterReservation(cloneCarte, data);
@@ -93,7 +93,7 @@ function traiterPassager(carte, data) {
 	nom.innerHTML = data.nom;
 	prenom.innerHTML = data.prenom;
 	categorie.innerHTML = data.libelleCategorie;
-	prix.innerHTML = data.price;
+	prix.innerHTML = data.price + "€";
 }
 
 function traiterVehicule(carte, data) {
@@ -105,7 +105,7 @@ function traiterVehicule(carte, data) {
 	//et on ecris les informations reçu dans les champs
 	nombre.innerHTML = data.quantite;
 	categorie.innerHTML = data.libelle;
-	prix.innerHTML = data.prix;
+	prix.innerHTML = data.prix + "€";
 }
 
 function afficherCarte() {
@@ -129,14 +129,15 @@ btnGauche.addEventListener("click", () => {
 	// on verifie qu'on ne choisis pas une carte qui n'existe pas
 	if (carteSelectionne >= 1) {
 		carteSelectionne -= 1;
-		console.log(carteSelectionne);
 		afficherCarte();
 	}
 });
 
 btnDroit.addEventListener("click", () => {
 	// on verifie qu'on ne choisis pas une carte qui n'existe pas
-	if (carteSelectionne + 2 < cartes.length) {
+	console.log(carteSelectionne, cartes);
+
+	if (carteSelectionne + 1 < cartes.length) {
 		carteSelectionne += 1;
 		afficherCarte();
 	}
