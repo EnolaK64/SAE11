@@ -171,8 +171,6 @@ function remplireTableauPersonne(nbCat, dicoPrix) {
 		tablePersonne.append(ligne);
 	}
 
-	// on recupère l'element pour le sous total du tableau
-
 	//on lui donne le sous total
 	prixPersonnes.innerText = sousTotal + "€";
 
