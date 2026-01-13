@@ -129,13 +129,14 @@ btnGauche.addEventListener("click", () => {
 	// on verifie qu'on ne choisis pas une carte qui n'existe pas
 	if (carteSelectionne >= 1) {
 		carteSelectionne -= 1;
+		console.log(carteSelectionne);
 		afficherCarte();
 	}
 });
 
 btnDroit.addEventListener("click", () => {
 	// on verifie qu'on ne choisis pas une carte qui n'existe pas
-	if (carteSelectionne + 1 < cartes.length) {
+	if (carteSelectionne + 2 < cartes.length) {
 		carteSelectionne += 1;
 		afficherCarte();
 	}

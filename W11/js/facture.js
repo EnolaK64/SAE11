@@ -6,12 +6,31 @@ const searchParams = new URLSearchParams(url.search); // on crée un objet searc
 
 const reservation = searchParams.get("reservation"); // on recupère le numero de réservation contenue dans l'url
 
+const prixPersonnes = document.getElementById("prixPersonnes");
+const prixVehicule = document.getElementById("prixVehicules");
+
 fetch(`https://can.iutrs.unistra.fr/api/reservation/${reservation}`).then(
 	(response) => {
 		response.json().then((data) => {
 			completerReservation(data);
-			compterCategoriePersonne(data.nbPassagers);
-			compterCategorieVehicule(data.nbVehicules);
+			//on verifie que le nombre de passager n'est pas 0
+			if (data.nbPassagers > 0) {
+				compterCategoriePersonne(data.nbPassagers);
+			} else {
+				//sinon on ajoute false à la liste des sousTotaux
+				sousTotaux.push(false);
+				//et on affiche 0 pour le sous total des passagers
+				prixPersonnes.innerText = "0.00€";
+			}
+			//on verifie que le nombre de véhicule n'est pas 0
+			if (data.nbVehicules > 0) {
+				compterCategorieVehicule(data.nbVehicules);
+			} else {
+				//sinon on ajoute false à la liste des sousTotaux
+				sousTotaux.push(false);
+				//et on affiche 0 pour le sous total des véhicule
+				prixVehicule.innerText = "0.00€";
+			}
 		});
 	}
 );
@@ -153,10 +172,9 @@ function remplireTableauPersonne(nbCat, dicoPrix) {
 	}
 
 	// on recupère l'element pour le sous total du tableau
-	const prixVehicule = document.getElementById("prixPersonnes");
 
 	//on lui donne le sous total
-	prixVehicule.innerText = sousTotal + "€";
+	prixPersonnes.innerText = sousTotal + "€";
 
 	//ajoute le sous total à la liste des sous totaux pour en faire la somme
 	sousTotaux.push(sousTotal);
@@ -190,7 +208,6 @@ function remplireTableauVehicule(nbCat, dicoPrix) {
 
 		tablePersonne.append(ligne);
 	}
-	const prixVehicule = document.getElementById("prixVehicules");
 	prixVehicule.innerText = sousTotal + "€";
 	sousTotaux.push(sousTotal);
 	calculerTotal();
