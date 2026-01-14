@@ -119,10 +119,10 @@ function compterCategorieVehicule(nbVehicules) {
 						const code = data.libelle;
 
 						if (nbCat[code] === undefined) {
-							nbCat[code] = 1;
+							nbCat[code] = data.quantite;
 							dicoPrix.set(code, data.prix);
 						} else {
-							nbCat[code] += 1;
+							nbCat[code] += data.quantite;
 						}
 					});
 					console.log(nbCat, dicoPrix);
