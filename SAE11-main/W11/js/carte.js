@@ -105,7 +105,7 @@ function traiterVehicule(carte, data) {
 	//et on ecrit les informations reçues dans les champs
 	nombre.innerHTML = data.quantite;
 	categorie.innerHTML = data.libelle;
-	prix.innerHTML = data.prix + "€";
+	prix.innerHTML = data.prix * data.quantite + "€";
 }
 
 function afficherCarte() {
