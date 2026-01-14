@@ -216,6 +216,6 @@ function calculerTotal() {
 	// la fonction parcourt tout le tableau soustotaux pour en faire la somme et l'affiche
 	if (sousTotaux.length === 2) {
 		const totalE = document.querySelector(".totalFacture");
-		totalE.innerText = sousTotaux[0] = sousTotaux[1] + "€";
+		totalE.innerText = sousTotaux[0] + sousTotaux[1] + "€";
 	}
 }
