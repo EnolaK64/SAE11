@@ -4,9 +4,9 @@ const dateSelect = document.getElementById("date");
 const tableLiaison = document.getElementById("tableauLiaison");
 const affichageErreur = document.getElementById("erreur");
 
-chercherLesLiaisons(); // on appele la fonction chercherLesLiaisons
+chercherLesLiaisons(); // on appelle la fonction chercherLesLiaisons
 
-//on applique des écouteurs sur les different champs d'entrée pour appeler la fonction actualiserTableau quand une valeur est modifier
+//on applique des écouteurs sur les differents champs d'entrée pour appeler la fonction actualiserTableau quand une valeur est modifiée
 liaisonSelect.addEventListener("change", actualiserTableau);
 dateSelect.addEventListener("change", actualiserTableau);
 
@@ -14,29 +14,29 @@ function actualiserTableau() {
 	// la fonction affiche les informations dans le tableau html
 	const liaisonValue = liaisonSelect.value;
 	const dateValue = dateSelect.value;
-	// on verifie que les entrée en sont pas vides
+	// on verifie que les entrées en sont pas vides
 	if (liaisonValue !== "" && dateValue !== "") {
-		//si les entrées sont correcte on cherche la liaison choisi par l'utilisateur
+		//si les entrées sont correctes on cherche la liaison choisie par l'utilisateur
 		chercherUneLiaison(liaisonValue, dateValue);
 	}
 }
 
 function chercherLesLiaisons() {
-	//la fonction envoie une requete à l'api pour récupere toutes les liaisons
+	//la fonction envoie une requete à l'api pour récuperer toutes les liaisons
 	fetch("https://can.iutrs.unistra.fr/api/liaison/all")
 		.then((response) => {
 			response.json().then((data) => {
-				creerLiaison(data); // on appele la fonction suivante pour afficher
+				creerLiaison(data); // on appelle la fonction suivante pour afficher
 			});
 		})
 		.catch((e) => {
-			//.catch est appelé en cas d'exception à l'envoie de la rêquete
+			//.catch est appelé en cas d'exception à l'envoi de la rêquete
 			erreurTrouve(e);
 		});
 }
 
 function chercherUneLiaison(idLiaison, date) {
-	//la fonction envoie une requete à l'api pour recuperé les informations la traversée saisi
+	//la fonction envoie une requete à l'api pour recuperer les informations de la traversée saisie
 	fetch(
 		`https://can.iutrs.unistra.fr/api/liaison/${idLiaison}/remplissage/${date}`
 	).then((response) => {
@@ -57,7 +57,7 @@ function chercherUneLiaison(idLiaison, date) {
 }
 
 function creerLiaison(data) {
-	// la fonction traite tout les liaison pour en faire des option dans le menu deroulant daans le html
+	// la fonction traite toutes les liaisons pour en faire des options dans le menu deroulant dans le html
 	for (let i = 0; i < Object.keys(data).length; i++) {
 		//on commence par initialiser les variables key et element
 		const key = Object.keys(data)[i];
@@ -66,7 +66,7 @@ function creerLiaison(data) {
 		//on crée un element option
 		const option = document.createElement("option");
 
-		//on lui donne un text et une valeur
+		//on lui donne un texte et une valeur
 		option.innerText = liaison.nom;
 		option.value = liaison.id;
 
@@ -78,7 +78,7 @@ function creerLiaison(data) {
 const tableBody = document.getElementById("tableauLiaisonBody"); // on selectione le corps du tableau
 
 function afficherTraversee(data) {
-	//la fonction remplis le tableau avec la traversée reçu en parametre
+	//la fonction remplit le tableau avec la traversée reçu en parametre
 	effacerContenu(tableBody); // on efface ce qu'il pourrait deja y avoir dans le corps
 
 	for (let i = 0; i < Object.keys(data).length; i++) {
@@ -93,14 +93,14 @@ function afficherTraversee(data) {
 			(value.nbReservationVoitures / value.capaciteVoitures) * 100
 		);
 
-		//on crée tout les element à mettre dans le tableau
+		//on crée tous les elements à mettre dans le tableau
 		const ligneTable = document.createElement("tr");
 
 		const caseHeure = document.createElement("td");
 		const casePassager = document.createElement("td");
 		const caseVehicule = document.createElement("td");
 
-		//on remplis le text des case
+		//on remplit le texte des cases
 		caseHeure.innerText = value.heure;
 		casePassager.innerText = tauxPassagers + "%";
 		caseVehicule.innerText = tauxVoitures + "%";
@@ -126,12 +126,12 @@ function afficherTraversee(data) {
 			caseVehicule.classList.add("fluo");
 		}
 
-		//on ajoute les case à la liste des enfants de la ligne
+		//on ajoute les cases à la liste des enfants de la ligne
 		ligneTable.append(caseHeure, casePassager, caseVehicule);
 		// et on ajoute la ligne au tableau
 		tableBody.appendChild(ligneTable);
 
-		//si on est arrivé jusque là c'est que tout c'es bien passer
+		//si on est arrivé jusque là c'est que tout s'est bien passé
 		//on peut donc supprimer tout message d'erreur qu'il pourrait y avoir
 		affichageErreur.innerText = "";
 		//et afficher le tableau
@@ -139,7 +139,7 @@ function afficherTraversee(data) {
 	}
 }
 
-// les deux fonction suivante affiche des messages d'erreur
+// les deux fonctions suivantes affichent des messages d'erreur
 function traverserInexistante() {
 	affichageErreur.innerText = "Aucun traversée n'a était trouvé";
 	tableLiaison.classList.remove("afficherTable");
@@ -150,7 +150,7 @@ function erreurTrouve(message) {
 }
 
 function effacerContenu(element) {
-	//la fonction supprime tout les enfant de l'element reçu en paramètre
+	//la fonction supprime tous les enfants de l'element reçu en paramètre
 	const enfants = element.children;
 	const length = enfants.length;
 	for (let i = 0; i < length; i++) {

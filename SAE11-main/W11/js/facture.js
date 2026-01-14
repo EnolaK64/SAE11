@@ -13,7 +13,7 @@ fetch(`https://can.iutrs.unistra.fr/api/reservation/${reservation}`).then(
 	(response) => {
 		response.json().then((data) => {
 			completerReservation(data);
-			//on verifie que le nombre de passager n'est pas 0
+			//on verifie que le nombre de passagers n'est pas 0
 			if (data.nbPassagers > 0) {
 				compterCategoriePersonne(data.nbPassagers);
 			} else {
@@ -22,13 +22,13 @@ fetch(`https://can.iutrs.unistra.fr/api/reservation/${reservation}`).then(
 				//et on affiche 0 pour le sous total des passagers
 				prixPersonnes.innerText = "0.00€";
 			}
-			//on verifie que le nombre de véhicule n'est pas 0
+			//on verifie que le nombre de véhicules n'est pas 0
 			if (data.nbVehicules > 0) {
 				compterCategorieVehicule(data.nbVehicules);
 			} else {
 				//sinon on ajoute false à la liste des sousTotaux
 				sousTotaux.push(false);
-				//et on affiche 0 pour le sous total des véhicule
+				//et on affiche 0 pour le sous total des véhicules
 				prixVehicule.innerText = "0.00€";
 			}
 		});
@@ -36,22 +36,22 @@ fetch(`https://can.iutrs.unistra.fr/api/reservation/${reservation}`).then(
 );
 
 function completerReservation(data) {
-	//la fonction remplis les champs relatifs aux informations général de la réservation
-	//on selectionne les elements concerné
+	//la fonction remplit les champs relatifs aux informations générales de la réservation
+	//on selectionne les elements concernés
 	const [reservationE, nomReservationE] = document
 		.querySelector(".infoReservation")
 		.querySelectorAll("span");
 
-	//on remplis leurs contenu
+	//on remplis leur contenu
 	reservationE.innerText = reservation;
 	nomReservationE.innerText = data.nom;
 
-	//on selectionne les elements concerné
+	//on selectionne les elements concernés
 	const [traveree, date, depart, bateau] = document
 		.querySelector(".infoVoyage")
 		.querySelectorAll("span");
 
-	//on remplis leurs contenu
+	//on remplit leurs contenu
 	traveree.innerText = data.portDepart + " - " + data.portArrivee;
 	date.innerText = data.date;
 	depart.innerText = data.heure;
@@ -68,7 +68,7 @@ function compterCategoriePersonne(nbPassagers) {
 			`https://can.iutrs.unistra.fr/api/reservation/${reservation}/passager/${i}`
 		).then((response) => {
 			response.json().then((data) => {
-				passager.push(data); // chaque personne est ajouté à la liste passager
+				passager.push(data); // chaque personne est ajoutée à la liste passagers
 				if (passager.length === nbPassagers) {
 					// si la liste contient autant de passagers qu'il y a de passagers dans la reservation alors
 					const nbCat = {}; //on initialise un objet nbCat
@@ -134,19 +134,19 @@ function compterCategorieVehicule(nbVehicules) {
 }
 
 function remplireTableauPersonne(nbCat, dicoPrix) {
-	// la fontion replis le tableau des personnes avec les donnée reçu
+	// la fontion replit le tableau des personnes avec les données reçues
 	const tablePersonne = document.getElementById("personne"); // on recupère le tableau
 
 	let sousTotal = 0; // initilise le sousTotal à 0
 
 	for (let i = 0; i < Object.keys(nbCat).length; i++) {
-		//pour chaque categories
+		//pour chaque categorie
 		//on recupère le libellé de la categorie
 		const cat = Object.keys(nbCat)[i];
 
 		const ligne = document.createElement("tr"); // on crée un element tr qui est une ligne de tableau
 
-		//on crée les case d'une ligne du tableau
+		//on crée les cases d'une ligne du tableau
 		const caseCat = document.createElement("td");
 		const nb = document.createElement("td");
 		const prixU = document.createElement("td");
@@ -155,7 +155,7 @@ function remplireTableauPersonne(nbCat, dicoPrix) {
 		// on calcule le prix de la ligne
 		const prixL = dicoPrix.get(cat) * nbCat[cat];
 
-		// on mette le text correspondant à chaque case
+		// on met le texte correspondant à chaque case
 		caseCat.innerText = cat;
 		nb.innerText = nbCat[cat];
 		prixU.innerText = dicoPrix.get(cat) + "€";
@@ -167,7 +167,7 @@ function remplireTableauPersonne(nbCat, dicoPrix) {
 		//on ajoute à la ligne les cases
 		ligne.append(caseCat, nb, prixU, prixLE);
 
-		// et on fini par ajouter la ligne au tableau
+		// et on finit par ajouter la ligne au tableau
 		tablePersonne.append(ligne);
 	}
 
@@ -211,9 +211,9 @@ function remplireTableauVehicule(nbCat, dicoPrix) {
 	calculerTotal();
 }
 
-let sousTotaux = []; // on initialise la variable sous Totaux qui va contenir tout les sous totaux pour en faire la somme
+let sousTotaux = []; // on initialise la variable sousTotaux qui va contenir tous les sous-totaux pour en faire la somme
 function calculerTotal() {
-	// la fonction parcours tout le tableau soustotaux pour en faire la somme et l'affiche
+	// la fonction parcourt tout le tableau soustotaux pour en faire la somme et l'affiche
 	if (sousTotaux.length === 2) {
 		const totalE = document.querySelector(".totalFacture");
 		totalE.innerText = sousTotaux[0] = sousTotaux[1] + "€";

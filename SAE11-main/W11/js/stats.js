@@ -1,31 +1,31 @@
-//on recupere le element dont nous aurons besoin
+//on recupere les elements dont nous aurons besoin
 const affichageErreur = document.getElementById("affichageErreur");
 const affichageSomme = document.getElementById("affichageSomme");
 const tableBody = document.getElementById("tableBody");
 const tableStats = document.getElementById("tableStats");
 const chiffreAffaire = [];
 
-chercherLesLiaisons(); // on appele la fonction chercherLesLiaisons
+chercherLesLiaisons(); // on appelle la fonction chercherLesLiaisons
 
 function chercherLesLiaisons() {
-	// la fonction envoie une requete à l'api pour recuperer les liaisons qui existe
+	// la fonction envoie une requete à l'api pour recuperer les liaisons qui existent
 	fetch("https://can.iutrs.unistra.fr/api/liaison/all")
 		.then((response) => {
 			response.json().then((data) => {
 				for (let i = 0; i < Object.keys(data).length; i++) {
 					const keys = Object.keys(data)[i];
-					//pour chaques liaisons on recupère l'id de la liaison
+					//pour chaque liaison on recupère l'id de la liaison
 					const liaisonId = data[keys].id;
 
 					chercherChiffreDaffaire(
 						Object.keys(data).length,
 						liaisonId
-					); //on appele la fonction chercherChiffreDaffaire
+					); //on appelle la fonction chercherChiffreDaffaire
 				}
 			});
 		})
 		.catch((e) => {
-			//en cas d'erreur dans la requete on appele la fonction erreurTrouve
+			//en cas d'erreur dans la requete on appelle la fonction erreurTrouve
 			erreurTrouve(e);
 		});
 }
@@ -40,7 +40,7 @@ function chercherChiffreDaffaire(nbLiaisons, id) {
 			});
 		})
 		.catch((e) => {
-			// en cas d'erreur dans la requete on appele la fonction erreurTrouve
+			// en cas d'erreur dans la requete on appelle la fonction erreurTrouve
 			erreurTrouve(e);
 		});
 }
@@ -52,13 +52,13 @@ function erreurTrouve(message) {
 }
 
 function afficherChiffreAffaire(nbLiaisons, liaison) {
-	//la fonction remplis le tableau avec les donnée reçu
+	//la fonction remplit le tableau avec les données reçues
 
 	const nom = liaison.nom;
 
 	const nbPassagers = liaison.passagers.nombre;
 
-	//on calcule le chiffre d'affaire par passagers
+	//on calcule le chiffre d'affaire par passager
 	const chiffrePassagers =
 		Math.round(liaison.passagers.chiffreAffaire * 100) / 100;
 
@@ -77,14 +77,14 @@ function afficherChiffreAffaire(nbLiaisons, liaison) {
 	const caseNbVehicule = document.createElement("td");
 	const caseChiffreVehicule = document.createElement("td");
 
-	//on remplis ces cases
+	//on remplit ces cases
 	caseNom.innerText = nom;
 	caseNbPassager.innerText = nbPassagers;
 	caseChiffrePassager.innerText = chiffrePassagers;
 	caseNbVehicule.innerText = nbVehicule;
 	caseChiffreVehicule.innerText = chiffreVehicule;
 
-	// on les ajoutes à la ligne  du tableau
+	// on les ajoute à la ligne du tableau
 	ligneTable.append(
 		caseNom,
 		caseNbPassager,
@@ -96,8 +96,8 @@ function afficherChiffreAffaire(nbLiaisons, liaison) {
 	//on ajoute cette ligne au tableau
 	tableBody.appendChild(ligneTable);
 
-	//on verifie que le tableau contient autant d'enfant qu'il y a des liaisons
-	//si c'est le cas on peut afficher le tableau et effacer tout les messages d'erreurs qu'il pourrait avoir
+	//on verifie que le tableau contient autant d'enfants qu'il y a de liaisons
+	//si c'est le cas on peut afficher le tableau et effacer tous les messages d'erreurs qu'il pourrait y avoir
 	if (tableBody.childElementCount === nbLiaisons) {
 		affichageErreur.innerText = "";
 		tableStats.classList.add("afficherTable");
@@ -108,10 +108,10 @@ function calculerChiffreGlobal(nbLiaisons, data) {
 	//la fonction calcule le chiffre d'affaire global du mois
 	const chiffrePassager = data.passagers.chiffreAffaire;
 	const chiffreVehicule = data.vehicules.chiffreAffaire;
-	//on ajoute tout les chiffre d'affaire dans la liste des chiffres d'affaire
+	//on ajoute tous les chiffres d'affaire dans la liste des chiffres d'affaire
 	chiffreAffaire.push(chiffrePassager, chiffreVehicule);
 
-	//si la liste contient tout les chiffre d'affaire
+	//si la liste contient tous les chiffres d'affaire
 	if (chiffreAffaire.length === nbLiaisons * 2) {
 		//on fait la somme du tableau
 		const somme = chiffreAffaire.reduce((acc, current) => {
