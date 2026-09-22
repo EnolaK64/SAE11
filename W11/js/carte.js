@@ -10,7 +10,7 @@ if (reservation === "") {
 	location.replace("./selectionReserv.html"); // au quel cas on renvoie l'utilisateur sur la page de selection de reserveration
 }
 
-fetch(`https://can.iutrs.unistra.fr/api/reservation/${reservation}`).then(
+fetch(`https://can.emerald-prism.fr/api/reservation/${reservation}`).then(
 	// on effectue une requete au serveur pour récupérer les informations sur la reservation
 	(reponse) => {
 		reponse.json().then((data) => {
@@ -64,7 +64,7 @@ function traiterReservation(carte, data) {
 function chercherPassagers(nbPassager, carte) {
 	//la fonction envoie une requete pour obtenir les informations sur un passager
 	fetch(
-		`https://can.iutrs.unistra.fr/api/reservation/${reservation}/passager/${nbPassager}`
+		`https://can.emerald-prism.fr/api/reservation/${reservation}/passager/${nbPassager}`
 	).then((reponse) => {
 		reponse.json().then((data) => {
 			traiterPassager(carte, data); // et on envoie les données à la fonction traiterPassager avec l'element carte
@@ -74,7 +74,7 @@ function chercherPassagers(nbPassager, carte) {
 
 function chercherVehicules(nbVehicule, carte) {
 	fetch(
-		`https://can.iutrs.unistra.fr/api/reservation/${reservation}/vehicule/${nbVehicule}`
+		`https://can.emerald-prism.fr/api/reservation/${reservation}/vehicule/${nbVehicule}`
 	).then((reponse) => {
 		//Note l'utilisation du .then() permet de ne pas bloquer l'execution du code en attendant la reponse du serveur ce qui permet d'envoyer et traiter les requetes en parallèle
 		reponse.json().then((data) => {

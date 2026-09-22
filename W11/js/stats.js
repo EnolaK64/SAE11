@@ -9,7 +9,7 @@ chercherLesLiaisons(); // on appelle la fonction chercherLesLiaisons
 
 function chercherLesLiaisons() {
 	// la fonction envoie une requete à l'api pour recuperer les liaisons qui existent
-	fetch("https://can.iutrs.unistra.fr/api/liaison/all")
+	fetch("https://can.emerald-prism.fr/api/liaison/all")
 		.then((response) => {
 			response.json().then((data) => {
 				for (let i = 0; i < Object.keys(data).length; i++) {
@@ -32,7 +32,7 @@ function chercherLesLiaisons() {
 
 function chercherChiffreDaffaire(nbLiaisons, id) {
 	//la fonction fait une requete à l'api pour recuperer le chiffre d'affaire d'une liaison
-	fetch(`https://can.iutrs.unistra.fr/api/liaison/${id}/chiffreAffaire`)
+	fetch(`https://can.emerald-prism.fr/api/liaison/${id}/chiffreAffaire`)
 		.then((response) => {
 			response.json().then((data) => {
 				afficherChiffreAffaire(nbLiaisons, data);

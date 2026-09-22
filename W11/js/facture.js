@@ -9,7 +9,7 @@ const reservation = searchParams.get("reservation"); // on recupère le numero d
 const prixPersonnes = document.getElementById("prixPersonnes");
 const prixVehicule = document.getElementById("prixVehicules");
 
-fetch(`https://can.iutrs.unistra.fr/api/reservation/${reservation}`).then(
+fetch(`https://can.emerald-prism.fr/api/reservation/${reservation}`).then(
 	(response) => {
 		response.json().then((data) => {
 			completerReservation(data);
@@ -65,7 +65,7 @@ function compterCategoriePersonne(nbPassagers) {
 	//la fonction compte combien de fois revient une categorie dans la reservation
 	for (let i = 1; i < nbPassagers + 1; i++) {
 		fetch(
-			`https://can.iutrs.unistra.fr/api/reservation/${reservation}/passager/${i}`
+			`https://can.emerald-prism.fr/api/reservation/${reservation}/passager/${i}`
 		).then((response) => {
 			response.json().then((data) => {
 				passager.push(data); // chaque personne est ajoutée à la liste passagers
@@ -104,7 +104,7 @@ function compterCategorieVehicule(nbVehicules) {
 	// la fonction fait la même chose que la fonction compterCategoriePersonne mais avec le vehicule
 	for (let i = 1; i < nbVehicules + 1; i++) {
 		fetch(
-			`https://can.iutrs.unistra.fr/api/reservation/${reservation}/vehicule/${i}`
+			`https://can.emerald-prism.fr/api/reservation/${reservation}/vehicule/${i}`
 		).then((response) => {
 			response.json().then((data) => {
 				vehicule.push(data);

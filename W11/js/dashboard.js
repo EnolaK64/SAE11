@@ -4,6 +4,7 @@ const dateSelect = document.getElementById("date");
 const tableLiaison = document.getElementById("tableauLiaison");
 const affichageErreur = document.getElementById("erreur");
 
+console.log("test");
 chercherLesLiaisons(); // on appelle la fonction chercherLesLiaisons
 
 //on applique des écouteurs sur les differents champs d'entrée pour appeler la fonction actualiserTableau quand une valeur est modifiée
@@ -23,7 +24,7 @@ function actualiserTableau() {
 
 function chercherLesLiaisons() {
 	//la fonction envoie une requete à l'api pour récuperer toutes les liaisons
-	fetch("https://can.iutrs.unistra.fr/api/liaison/all")
+	fetch("https://can.emerald-prism.fr/api/liaison/all")
 		.then((response) => {
 			response.json().then((data) => {
 				creerLiaison(data); // on appelle la fonction suivante pour afficher
@@ -38,7 +39,7 @@ function chercherLesLiaisons() {
 function chercherUneLiaison(idLiaison, date) {
 	//la fonction envoie une requete à l'api pour recuperer les informations de la traversée saisie
 	fetch(
-		`https://can.iutrs.unistra.fr/api/liaison/${idLiaison}/remplissage/${date}`
+		`https://can.emerald-prism.fr/api/liaison/${idLiaison}/remplissage/${date}`
 	).then((response) => {
 		if (response.status === 404) {
 			//si le status est 404 alors la la traversée n'existe pas
