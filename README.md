@@ -1,4 +1,4 @@
-# SAE 1.01 - Projet CAN (Compagnie Alsacien)
+# SAE 1.01 - Projet CAN (Compagnie Alsacienne de Navigation)
 
 Projet réalisé dans le cadre du **BUT Informatique (1ère année - S1)**.  
 L'objectif de cette SAÉ (Situation d'Apprentissage et d'Évaluation) était de développer un système de gestion et d'affichage des réservations pour une compagnie fictive de bateaux.
